@@ -1,7 +1,7 @@
 defmodule RezzyWeb.ReservationController do
   use RezzyWeb.Web, :controller
 
-  alias RezzyWeb.Reservation
+  alias RezzyWeb.{Reservation, Comment}
 
   def index(conn, _params) do
     reservations = Repo.all(Reservation)
@@ -9,7 +9,7 @@ defmodule RezzyWeb.ReservationController do
   end
 
   def new(conn, _params) do
-    changeset = Reservation.changeset(%Reservation{})
+    changeset = Reservation.changeset(%Reservation{comments: [%Comment{}]})
     render(conn, "new.html", changeset: changeset)
   end
 

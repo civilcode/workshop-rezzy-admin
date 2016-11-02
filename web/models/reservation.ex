@@ -20,6 +20,7 @@ defmodule RezzyWeb.Reservation do
   def changeset(struct, params \\ %{}) do
     struct
     |> cast(params, [:reserved_for, :name, :email, :quantity])
+    |> cast_assoc(:comments)
     |> validate_required([:reserved_for, :name, :email, :quantity])
   end
 end
