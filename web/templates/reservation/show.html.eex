@@ -1,0 +1,28 @@
+<h2>Show reservation</h2>
+
+<ul>
+
+  <li>
+    <strong>Reserved for:</strong>
+    <%= @reservation.reserved_for %>
+  </li>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @reservation.name %>
+  </li>
+
+  <li>
+    <strong>Email:</strong>
+    <%= @reservation.email %>
+  </li>
+
+  <li>
+    <strong>Quantity:</strong>
+    <%= @reservation.quantity %>
+  </li>
+
+</ul>
+
+<%= link "Edit", to: reservation_path(@conn, :edit, @reservation) %>
+<%= link "Back", to: reservation_path(@conn, :index) %>

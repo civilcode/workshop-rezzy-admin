@@ -17,7 +17,7 @@ defmodule RezzyWeb.Router do
     pipe_through :browser # Use the default browser stack
 
     get "/", PageController, :index
-    resources "/reservations", Admin.ReservationController
+    resources "/reservations", ReservationController
 
   end
 
