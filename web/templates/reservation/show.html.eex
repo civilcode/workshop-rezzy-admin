@@ -24,5 +24,24 @@
 
 </ul>
 
+<table class="table">
+  <thead>
+    <tr>
+      <th>Body</th>
+
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+<%= for comment <- @comments do %>
+    <tr>
+      <td><%= comment.body %></td>
+    </tr>
+<% end %>
+  </tbody>
+</table>
+
+<%= link "New comment", to: reservation_comment_path(@conn, :new, @reservation) %>
+
 <%= link "Edit", to: reservation_path(@conn, :edit, @reservation) %>
 <%= link "Back", to: reservation_path(@conn, :index) %>

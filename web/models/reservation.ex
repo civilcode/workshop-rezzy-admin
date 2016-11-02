@@ -1,11 +1,15 @@
 defmodule RezzyWeb.Reservation do
   use RezzyWeb.Web, :model
 
+  alias RezzyWeb.Comment
+
   schema "reservations" do
     field :reserved_for, Ecto.Date
     field :name, :string
     field :email, :string
     field :quantity, :integer
+
+    has_many :comments, Comment
 
     timestamps()
   end

@@ -27,8 +27,8 @@ defmodule RezzyWeb.ReservationController do
   end
 
   def show(conn, %{"id" => id}) do
-    reservation = Repo.get!(Reservation, id)
-    render(conn, "show.html", reservation: reservation)
+    reservation = Repo.get!(Reservation, id) |> Repo.preload(:comments)
+    render(conn, "show.html", reservation: reservation, comments: reservation.comments)
   end
 
   def edit(conn, %{"id" => id}) do
