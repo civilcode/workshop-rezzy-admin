@@ -14,11 +14,11 @@ defmodule RezzyWeb.PageController do
   # Plug.Conn
 
   def index(conn, _params, "hello") do
-    conn
-    |> render("index.html")
+    render(conn, "index.html")
   end
 
   def index(conn, _params) do
+    # explicit render
     render(conn, "index.html")
   end
 
