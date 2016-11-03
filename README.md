@@ -1,5 +1,7 @@
 # RezzyWeb
 
+An example CRUD application for managing Reservations and Comments.
+
 To start your Phoenix app:
 
   * Install dependencies with `mix deps.get`
